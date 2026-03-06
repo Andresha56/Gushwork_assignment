@@ -1,0 +1,159 @@
+# Feature Documentation
+
+This document describes every section and interactive feature. It's written for anyone who needs to understand what the page does, how it behaves across devices, and how the pieces fit together — no coding knowledge required.
+
+---
+
+## Project Overview
+
+The landing page is a single-page product site for a premium HDPE pipe and coil manufacturer. Its job is to walk a potential buyer — typically a project manager, civil engineer, or procurement lead — from first impression all the way to submitting a quote request. Every section is designed to answer a specific question the visitor might have: What is this product? What are its specs? How is it made? Who else uses it? How do I get a quote?
+
+The page is fully responsive and works on desktop, tablet, and mobile without any loss of functionality.
+
+---
+
+## File Structure
+
+| File | Purpose |
+|---|---|
+| `index.html` | All page content and structure |
+| `styles.css` | Every visual style — layout, colours, typography, spacing |
+| `script.js` | All interactive behaviour — gallery, tabs, accordion, carousel |
+
+---
+
+## Page Sections
+
+### 1. Header
+
+The header sits at the top of the page and contains the Europlex logo on the left, two navigation links in the centre, and a "Contact Us" button on the right. It stays in place as you scroll.
+
+On mobile, the two nav links and the contact button are hidden to save space. A hamburger icon (three stacked bars) appears instead. Tapping it slides open a full dropdown menu with all the navigation links and the contact button. Tapping any link in that menu automatically closes it so the visitor lands cleanly on the right section.
+
+The logo loads from an image file. If that image fails to load for any reason, the page quietly falls back to a text version of the logo — so the header never looks broken.
+
+---
+
+### 2. Sticky Navigation Bar
+
+As soon as the visitor scrolls past the hero section, a compact navigation bar slides down from the top of the screen and stays visible for the rest of the page. This gives visitors a persistent way to jump between sections without scrolling all the way back to the top.
+
+If the visitor scrolls back up toward the top, the bar slides away — it's only there when it's actually useful.
+
+---
+
+### 3. Hero Section
+
+The hero is the very first thing visitors see. It's split into two halves side by side on desktop: a product image gallery on the left, and the core product information on the right.
+
+**What's on the right side:**
+- A breadcrumb trail showing where you are in the product catalogue
+- Three certification badges (BIS, ISO, CE) so trust is established immediately
+- The product headline
+- A five-point feature checklist with filled checkmark icons
+- A price range box showing indicative pricing, with two amber chips below it showing shipping time (6–12 days) and returns policy (within 7 days)
+- Two action buttons — "Get Custom Quote" jumps to the contact form at the bottom, and "View Technical Specs" scrolls to the specs table
+
+**The image gallery (left side):**
+
+The gallery shows five product images. Visitors can move between them using arrow buttons overlaid on the image, or by clicking any of the five thumbnail images shown in a row below the main image.
+
+On wide desktop screens (above 1300px wide), hovering over the main image activates a zoom feature. A small rectangular lens appears under the cursor and a large zoom pane opens to the right of the gallery, showing the hovered region of the image magnified 2.5×. The zoom pane sits outside the main image container specifically so it doesn't get clipped — it floats freely alongside. When the mouse leaves the image, both the lens and the zoom pane disappear cleanly. On smaller screens, the zoom feature is hidden entirely and the cursor returns to its normal appearance.
+
+On mobile, the two halves of the hero stack vertically — gallery on top, product information below.
+
+---
+
+### 4. Brand Marquee
+
+A thin strip below the hero displays the "EUROFLEX" brand icon repeating continuously in a slow horizontal scroll. It pauses if you hover over it. This is purely decorative — it's hidden from screen readers so it doesn't clutter the accessibility tree.
+
+---
+
+### 5. Technical Specifications
+
+This section sits on a dark navy background to visually separate it from the rest of the page. It contains a two-column table listing eight key product specifications: pipe size range, pressure rating, material grade, operating temperature range, installation methods, density, minimum bend radius, and colour coding.
+
+On hover, individual table rows flip to a light background with dark text — a small touch that makes scanning easier on desktop.
+
+Below the table is a "Download Full Technical Datasheet" button styled as a white outline against the dark background.
+
+---
+
+### 6. Features (Built to Last)
+
+Six feature cards arranged in a 3×2 grid. Each card has a small icon in a soft red square, a heading, and a short description. On hover, cards lift slightly with a shadow to signal interactivity.
+
+On tablet the grid shifts to two columns, and on mobile it becomes a single column so cards never feel cramped.
+
+---
+
+### 7. FAQ Accordion
+
+Five frequently asked questions listed one below the other. Each question row has a + icon on the right. Clicking a question expands it to reveal the answer text below, with a smooth CSS animation. The + rotates to an × when open.
+
+Only one question can be open at a time. If you open a second question, the first one collapses automatically. Clicking an open question closes it.
+
+Below the accordion is a small email capture panel. Visitors can enter their email address to request the full product catalogue be sent to them.
+
+---
+
+### 8. Applications Carousel
+
+A horizontally scrollable row of six tall cards, each representing an industry that uses HDPE pipes: water supply, agriculture, mining, gas distribution, industrial, and telecom ducting.
+
+Each card is a full-height photograph with a dark gradient overlay at the bottom. The industry name and a short description sit on top of that gradient in white text. Hovering a card slowly zooms the photo inward for a bit of life.
+
+Left and right arrow buttons let visitors scroll through the cards one at a time. The arrows fade to half-opacity when there's nothing further to scroll in that direction — so visitors always know when they've reached the end. On mobile, cards are slightly narrower so you can always see the edge of the next card, making it obvious the row is scrollable.
+
+---
+
+### 9. Manufacturing Process
+
+This section walks visitors through the eight steps of how Europlex pipes are made. It works differently depending on the device:
+
+**On desktop:** Eight pill-shaped tab buttons sit in a row at the top — Raw Material, Extrusion, Cooling, Sizing, Quality Control, Marking, Cutting, and Packaging. Clicking any tab swaps the panel below it, which shows a heading, description, checklist, and a large photo for that step. The active tab is filled navy. Inactive tabs have a light grey border and muted text. The image takes up more horizontal space than the text (roughly 60/40) so photos feel generous rather than squeezed.
+
+**On tablet:** The section gets wrapped in a rounded card with a border and soft shadow. The tab row becomes horizontally scrollable if the tabs don't all fit in one line — the active tab automatically scrolls into view when selected.
+
+**On mobile:** The tab row disappears entirely. In its place, a small navy badge at the top of the card shows "Step 1/8: Raw Material" and updates as you navigate. The content stacks vertically with the image below the text. At the bottom of the card, two outline pill buttons — "← Previous" and "Next →" — let visitors step through all eight stages. The Previous button is greyed out on the first step, and Next is greyed out on the last.
+
+---
+
+### 10. Testimonials
+
+Four customer testimonial cards in a row. Each card contains a five-star rating in amber, an italic quote, and the customer's name, initials (shown in a circular avatar), and job title. Cards have a subtle hover lift effect.
+
+On tablet the row becomes two columns; on mobile it becomes a single column.
+
+---
+
+### 11. Products Portfolio
+
+Three product cards in a row, each showing a product category title, description, photo, and a "Learn More" button. Hovering a card lifts it with a shadow and subtly zooms the photo.
+
+Below the three cards is a strip asking "Didn't find what you're looking for?" with a "Get in Touch" button that jumps to the contact form.
+
+---
+
+### 12. Resources & Downloads
+
+A clean list of three downloadable documents: the Installation Manual, the Maintenance & Inspection Handbook, and the Engineering Specifications Sheet. Each row shows the document title and a short description on the left, and a download arrow on the right. Hovering a row highlights the background and turns the text and arrow blue to signal it's clickable.
+
+---
+
+### 13. Contact / Quote Form
+
+A full-width section on a navy blue background. The left half has a headline, supporting text, and direct contact details (phone and email). The right half is a white card containing a short enquiry form — name, company, email, and phone — with a "Get Quote →" button that spans the full width of the card.
+
+On mobile, the two halves stack so the form sits below the contact copy.
+
+---
+
+### 14. Footer
+
+The footer has two parts. The upper section contains the logo and a tagline on the left, and four link columns on the right: About Us, Categories, Products, and Contact. The contact column includes a physical address, phone, two email addresses, and social media links (LinkedIn, X, Instagram).
+
+The lower strip is a simple copyright line on the left and three legal links (Privacy Policy, Terms of Use, Sitemap) on the right.
+
+On mobile, the four columns collapse to two, and the legal links stack vertically.
