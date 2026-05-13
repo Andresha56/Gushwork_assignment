@@ -1,6 +1,5 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-    //    STICKY BAR
     // Show sticky navigation bar after scrolling past hero section
     var stickyBar = document.getElementById("sticky-bar");
     var heroSection = document.getElementById("hero");
