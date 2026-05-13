@@ -1,3 +1,6 @@
+# Live Link 
+https://gushwork-assignment-fawn.vercel.app/
+
 # Feature Documentation
 
 This document describes every section and interactive feature. It's written for anyone who needs to understand what the page does, how it behaves across devices, and how the pieces fit together — no coding knowledge required.
